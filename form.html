@@ -1,0 +1,260 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 20px;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 480px;
+            padding: 40px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            animation: slideUp 0.8s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-container h1 {
+            text-align: center;
+            color: white;
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .form-container .subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .input-group input,
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            font-size: 15px;
+            transition: 0.3s ease;
+        }
+
+        .input-group input::placeholder,
+        .input-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .input-group input:focus,
+        .input-group textarea:focus,
+        .input-group select:focus {
+            border-color: white;
+            background: rgba(255, 255, 255, 0.22);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+        }
+
+        .input-group textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        .input-group select option {
+            color: #333;
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .row .input-group {
+            flex: 1;
+        }
+
+        .terms {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 5px 0 25px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 13px;
+        }
+
+        .terms input {
+            width: 16px;
+            height: 16px;
+            accent-color: #764ba2;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            background: white;
+            color: #6a4bb5;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .login-text {
+            text-align: center;
+            margin-top: 22px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+
+        .login-text a {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .login-text a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 500px) {
+            .form-container {
+                padding: 30px 22px;
+            }
+
+            .row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .form-container h1 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+
+        <h1>Create Account</h1>
+        <p class="subtitle">Join us and start your journey today ✨</p>
+
+        <form>
+
+            <div class="row">
+                <div class="input-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" placeholder="John" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" placeholder="Doe" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="john@example.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+
+            <div class="input-group">
+                <label for="country">Country</label>
+                <select id="country">
+                    <option value="">Select your country</option>
+                    <option>India</option>
+                    <option>United States</option>
+                    <option>United Kingdom</option>
+                    <option>Canada</option>
+                    <option>Australia</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="message">About You</label>
+                <textarea id="message"
+                    placeholder="Tell us something about yourself..."></textarea>
+            </div>
+
+            <div class="terms">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I agree to the Terms & Conditions</label>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Create Account →
+            </button>
+
+            <p class="login-text">
+                Already have an account?
+                <a href="#">Login</a>
+            </p>
+
+        </form>
+    </div>
+
+</body>
+</html>
+```
